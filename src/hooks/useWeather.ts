@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import type { WeatherData } from "../types";
+import type { Weather } from "../types";
 
 export const useWeather = () => {
   const [error, setError] = useState("");
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weather, setWeather] = useState<Weather | null>(null);
 
   const fetchWeather = async (latitude: number, longitude: number) => {
     try {

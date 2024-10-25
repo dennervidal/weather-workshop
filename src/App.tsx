@@ -1,4 +1,4 @@
-import { Header } from "./components";
+import { Header, WeatherForecast } from "./components";
 import { useWeather } from "./hooks";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       {error && <span className="text-red-500">{error}</span>}
 
       {weather ? (
-        <span>{JSON.stringify(weather)}</span>
+        <WeatherForecast weather={weather} />
       ) : (
         <h2 className="text-center mt-8 text-md">Nenhuma cidade selecionada</h2>
       )}
