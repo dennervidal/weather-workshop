@@ -5,3 +5,12 @@ export type Suggestion = {
   latitude: number;
   longitude: number;
 };
+
+export type WeatherData = {
+  location: string;
+  forecast: any;
+};
+
+export interface HeaderProps {
+  fetchWeather: (latitude: number, longitude: number) => void;
+}

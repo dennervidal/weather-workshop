@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState, type ChangeEvent } from "react";
-import type { Suggestion } from "../types";
+import type { HeaderProps, Suggestion } from "../types";
 import { useFloatingLogic } from "./useFloatingLogic";
 
-export const useHeader = () => {
+export const useHeader = ({ fetchWeather }: HeaderProps) => {
   const [address, setAddress] = useState("");
   const [error, setError] = useState("");
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
@@ -37,6 +37,7 @@ export const useHeader = () => {
   const handleSuggestionClick = (suggestion: Suggestion) => {
     setIsOpen(false);
     setAddress(suggestion.name);
+    fetchWeather(suggestion.latitude, suggestion.longitude);
   };
 
   const floatingStyle = {

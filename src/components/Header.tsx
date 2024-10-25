@@ -1,7 +1,8 @@
 import { IoIosSearch } from "react-icons/io";
 import { useHeader } from "../hooks";
+import type { HeaderProps } from "../types";
 
-export const Header = () => {
+export const Header = ({ fetchWeather }: HeaderProps) => {
   const {
     refs,
     setIsOpen,
@@ -13,7 +14,7 @@ export const Header = () => {
     suggestions,
     handleSuggestionClick,
     error,
-  } = useHeader();
+  } = useHeader({ fetchWeather });
 
   return (
     <header className="flex flex-row items-center p-4 bg-gray-800 rounded-lg relative justify-between">
