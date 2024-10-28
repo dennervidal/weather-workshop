@@ -1,3 +1,5 @@
+export type ChartType = "bar" | "line" | "area";
+
 export type Suggestion = {
   id: number;
   name: string;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Weather } from "../types";
-import { formatToBrasiliaTime, getDayNames } from "../utils";
+import { formatToBrasiliaTime, getCurrentDayData, getDayNames } from "../utils";
 
 export const useWeatherForecast = (weather: Weather) => {
   const [selectedDay, setSelectedDay] = useState(0);
@@ -16,11 +16,24 @@ export const useWeatherForecast = (weather: Weather) => {
     weather.forecast.forecastday?.[selectedDay]?.astro?.sunset || ""
   );
 
+  const rainChanceData = getCurrentDayData(
+    weather,
+    selectedDay,
+    "chance_of_rain"
+  );
+
+  const windSpeedData = getCurrentDayData(weather, selectedDay, "wind_kph");
+
+  const humidityData = getCurrentDayData(weather, selectedDay, "humidity");
+
   return {
     selectedDay,
     handleDayClick,
     dayNames,
     sunriseTime,
     sunsetTime,
+    rainChanceData,
+    windSpeedData,
+    humidityData,
   };
 };
