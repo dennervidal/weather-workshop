@@ -29,6 +29,7 @@ jobs:
       - name: build docs
         env:
           VITE_WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          BASE_PATH: "/weather-workshop"
         run: pnpm build
 
       - name: upload artifact
