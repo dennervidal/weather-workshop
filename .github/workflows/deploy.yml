@@ -1,7 +1,6 @@
 name: deploy on pages
 
-on:
-  workflow-dispatch:
+on: workflow-dispatch
 
 jobs:
   build:
