@@ -1,4 +1,16 @@
-// Adicione os seus types/interfaces aqui no começo
+export type ChartType = "bar" | "line" | "area";
+
+export type Suggestion = {
+  id: number;
+  name: string;
+  country: string;
+  latitude: number;
+  longitude: number;
+};
+
+export interface HeaderProps {
+  fetchWeather: (latitude: number, longitude: number) => void;
+}
 
 export interface Weather {
   location: Location;
