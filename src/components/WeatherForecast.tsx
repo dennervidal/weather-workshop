@@ -21,9 +21,9 @@ export const WeatherForecast = ({ weather }: WeatherForecastProps) => {
 
   return (
     <div className="flex flex-col gap-y-4">
-      <h2 className="text-2xl font-bold">Previsão para 7 dias</h2>
+      <h2 className="text-2xl font-bold">Previsão para 3 dias</h2>
       <div className="flex flex-row gap-4 w-full">
-        {Array.from({ length: 7 }).map((_, index) => (
+        {Array.from({ length: 3 }).map((_, index) => (
           <WeatherDayCard
             key={index}
             index={index}

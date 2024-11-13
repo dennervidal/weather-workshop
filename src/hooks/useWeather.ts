@@ -11,7 +11,7 @@ export const useWeather = () => {
       const result = await axios.get(
         `https://api.weatherapi.com/v1/forecast.json?key=${
           import.meta.env.VITE_WEATHER_API_KEY
-        }&q=${latitude},${longitude}&days=7&aqi=no&alerts=no`
+        }&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`
       );
       setWeather(result.data);
     } catch (e) {

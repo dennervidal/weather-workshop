@@ -25,8 +25,8 @@ export const WeatherDayCard = ({
     <div
       className={`${
         isSelected
-          ? "bg-[#BBD7EC] w-[12vw] text-white"
-          : "bg-[#333333] w-[6vw] text-gray-300"
+          ? "bg-[#BBD7EC] w-[24vw] text-white"
+          : "bg-[#333333] w-[12vw] text-gray-300"
       } rounded-[30px] cursor-pointer text-center overflow-hidden transition-all duration-300 ease-in-out`}
       onClick={() => onClick(index)}
     >
@@ -75,12 +75,12 @@ export const WeatherDayCard = ({
           </div>
         </div>
       ) : (
-        <div className="flex flex-col justify-between h-full p-4">
+        <div className="flex flex-col justify-between h-full p-4 items-center">
           <p className="border-b border-gray-300 w-full">{dayName}</p>
           <img
             src={dayForecast?.day.condition.icon}
             alt="ícone do tempo"
-            className="w-15 h-15"
+            className="w-[128px] h-[128px]"
           />
           <div className="flex justify-center mb-2">
             <p className="text-2xl font-bold">
